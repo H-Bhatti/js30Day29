@@ -12,6 +12,7 @@ function timer (seconds){
     displayTimer(seconds);
     displayEndTime(then);
 
+
     countDown = setInterval(()=>{
         
         const secondsLeft = Math.round((then - Date.now()) / 1000);
@@ -31,6 +32,8 @@ function displayTimer (seconds){
     const sec = seconds % 60;
     const display = `${min<10? "0":""}${min}:${sec<10? "0":""}${sec}`
     // console.log(display);
+    document.title = display;
+
     timerDisplay.textContent = display;
 }
 
